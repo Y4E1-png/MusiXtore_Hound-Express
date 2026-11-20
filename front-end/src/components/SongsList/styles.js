@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const LibraryContainer = styled.section`
   width: 100%;
@@ -30,3 +30,35 @@ export const LibraryGrid = styled.div`
   }
 `;
 
+const spin = keyframes`
+  to { transform: rotate(360deg); }
+`;
+
+export const LoadingStatus = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 160px;
+  margin: 0;
+  padding: 24px;
+  border: 1px solid rgba(245, 238, 232, 0.15);
+  border-radius: 8px;
+  background: ${props => props.theme.colors.surface};
+  color: ${props => props.theme.colors.secondaryText};
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(239, 195, 164, 0.2);
+    border-top-color: ${props => props.theme.colors.primary};
+    border-radius: 50%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &::before {
+      animation: ${spin} 1s linear infinite;
+    }
+  }
+`;

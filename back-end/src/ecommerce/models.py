@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 class Producto (models.Model):
   nombre = models.CharField(max_length=100)
@@ -12,4 +13,8 @@ class PerfilUsuario (models.Model):
   direccion = models.CharField(max_length=200)
   telefono = models.CharField(max_length=15)
 
-
+class Guide (models.Model):
+  trackingNumber = models.CharField(max_length = 15, unique = True)
+  createdAt = models.DateTimeField(default = timezone.now)
+  updatedAt = models.DateTimeField (auto_now = True)
+  currentStatus = models.CharField(max_length = 20, default="Pending", choices=[("Pending", "Pending"), ("In Transit", "In Transit"), ("Delivered", "Delivered")])

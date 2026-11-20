@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Guide
+from .serializers import GuideSerializer
 
-# Create your views here.
+class GuideViewSet (ModelViewSet):
+  queryset = Guide.objects.all()
+  serializer_class = GuideSerializer
+

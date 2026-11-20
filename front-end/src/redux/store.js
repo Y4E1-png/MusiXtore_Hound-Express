@@ -4,6 +4,7 @@ import cartReducer from "./slices/cartSlice";
 import userReducer from "./slices/usersSlice";
 import orderReducer from "./slices/orderSlice";
 import songReducer from "./slices/songsSlice";
+import guideReducer from "./slices/guideSlice";
 
 
 const store = configureStore({
@@ -12,6 +13,7 @@ const store = configureStore({
     user: userReducer,
     order: orderReducer,
     songs: songReducer,
+    guide: guideReducer
   },
 });
 

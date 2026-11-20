@@ -4,9 +4,6 @@ from rest_framework.viewsets import ModelViewSet
 from .models import Song, User, Order
 from .serializers import SongSerializer, UserSerializer, OrderSerializer
 
-from django.contrib.auth import authenticate
-from rest_framework import status
-
 
 class SongViewSet (ModelViewSet):
   queryset = Song.objects.all()

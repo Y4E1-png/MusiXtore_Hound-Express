@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SongCard from "../SongCard";
 import { fetchSongs } from "../../redux/slices/songsSlice";
-import { LibraryContainer, LibraryTitle, LibraryGrid } from './styles';
+import { LibraryContainer, LibraryTitle, LibraryGrid, LoadingStatus } from './styles';
 
 
 const SongsList = ({ query = "" }) => {
@@ -20,7 +20,9 @@ const SongsList = ({ query = "" }) => {
   }, [dispatch])
 
   if (status === "loading") {
-    return <div>Loading...</div>
+    return (
+        <LoadingStatus role="status">Loading songs…</LoadingStatus>
+    );
   }
 
   if (status === "failed") {

@@ -27,6 +27,7 @@ export const HeaderContainer = styled.header`
   }
 
   @media (max-width: 640px) {
+    flex-wrap: wrap;
     gap: 12px;
     padding: 22px 20px;
   }
@@ -65,12 +66,18 @@ export const Title = styled.h1`
   }
 `;
 
-export const CartButton = styled(Link)`
+export const HeaderActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+`;
+
+export const HeaderButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-left: auto;
   min-height: 44px;
   padding: 8px 12px;
   border: 1px solid rgba(239, 195, 164, 0.24);
@@ -78,10 +85,24 @@ export const CartButton = styled(Link)`
   color: ${props => props.theme.colors.text};
   text-decoration: none;
   flex-shrink: 0;
+  transform: translateY(0);
+  transition: transform, color, border-color, background-color;
+  
 
   &:hover {
-    border-color: ${props => props.theme.colors.primary};
-    color: ${props => props.theme.colors.primary};
+    transform: translateY(-4px);
+    background-color: rgba(239, 195, 164, 0.10);
+    border-color: rgba(239, 195, 164, 0.48);
+    color: ${props => props.theme.colors.primaryHover};
+    transition-duration: 180ms;
+    transition-timing-function: ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &, &:hover {
+      transform: none;
+      transition: none;
+    }
   }
 `;
 

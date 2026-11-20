@@ -9,6 +9,9 @@ import LoginForm from './components/LoginForm/LoginForm'
 import RegisterForm from './components/RegisterForm/RegisterForm'
 import CheckoutForm from './components/CheckoutForm/CheckoutForm'
 import PostCheckOut from './components/PostCheckout/PostCheckout'
+import CreateGuides from './components/Guides/CreateGuides'
+import UpdateGuide from './components/Guides/UpdateGuide'
+import GuidesList from './components/Guides/GuidesList'
 
 
 
@@ -36,6 +39,9 @@ function App() {
         <Route path='/register' element={ <RegisterForm />} />
         <Route path="/checkout" element={hasCartItems ? <CheckoutForm /> : <Navigate to="/cart" replace />} />
         <Route path="/post-checkout" element={hasConfirmedOrder ? <PostCheckOut /> : <Navigate to="/" replace />} />
+        <Route path='/NewGuide' element={<CreateGuides />} />
+        <Route path='/UpdateGuide/:guideId' element={<UpdateGuide />} />
+        <Route path='/Guides' element={<GuidesList />} />
       </Routes>
     </main>
   )
