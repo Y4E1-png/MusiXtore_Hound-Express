@@ -1,11 +1,15 @@
 import axios from "axios";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:8002";
+
+
+
 const api = axios.create({
-  baseURL: "http://localhost:8002/api"
+  baseURL: `${backendUrl}/api`
 });
 
 export const apiGuide = axios.create({
-  baseURL: "http://localhost:8002/guides"
+  baseURL: `${backendUrl}/guides`
 });
 
 export default api;
