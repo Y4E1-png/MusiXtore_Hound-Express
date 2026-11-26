@@ -52,6 +52,13 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173). The frontend sends requests to `http://localhost:8002/api`. Run `npm run build` from `front-end/` to generate the production build in `dist/`.
 
+## Try shipment management
+
+1. Open **Guides** from the navigation menu.
+2. Create a guide with a unique test tracking number, such as `DEMO-001`.
+3. Find the new guide in the list and open it to update its status.
+4. Move it from **Pending** to **In Transit**, then to **Delivered**.
+
 ## Try the checkout
 
 1. Add a song to the cart and continue to checkout.
