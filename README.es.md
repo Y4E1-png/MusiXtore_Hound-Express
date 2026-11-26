@@ -52,6 +52,13 @@ npm run dev
 
 Abre [http://localhost:5173](http://localhost:5173). El frontend envía las peticiones a `http://localhost:8002/api`. Ejecuta `npm run build` desde `front-end/` para generar la compilación de producción en `dist/`.
 
+## Probar la gestión de guías
+
+1. Abre **Guides** desde el menú de navegación.
+2. Crea una guía con un número de rastreo de prueba único, como `DEMO-001`.
+3. Busca la guía en el listado y ábrela para actualizar su estado.
+4. Cambia el estado de **Pending** a **In Transit** y después a **Delivered**.
+
 ## Probar el checkout
 
 1. Agrega una canción al carrito y continúa al pago.
