@@ -38,7 +38,7 @@ docker compose up --build -d web postgres redis
 docker compose exec web python manage.py migrate
 ```
 
-Open the [songs endpoint](http://houndexpress-api.onrender.com/api/songs/) to check that Django responds. If the catalog is empty, add a sample song using the browsable API form.
+Open the [published songs endpoint](http://houndexpress-api.onrender.com/api/songs/) or [local songs endpoint](http://localhost:8002/api/songs/)to check that Django responds. If the catalog is empty, add a sample song using the browsable API form.
 
 ## Run the frontend
 
@@ -50,7 +50,7 @@ npm ci
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173). The frontend sends requests to `http://localhost:8002/api`. Run `npm run build` from `front-end/` to generate the production build in `dist/`.
+Open [http://localhost:5173](http://localhost:5173). The frontend sends requests to `http://localhost:8002/api` and http://localhost:8002/guides/monitoring/. Run `npm run build` from `front-end/` to generate the production build in `dist/`.
 
 ## Try shipment management
 
