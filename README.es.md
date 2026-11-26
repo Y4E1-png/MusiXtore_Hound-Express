@@ -10,6 +10,10 @@ La tienda incluye búsqueda en el catálogo, carrito, registro de usuarios de pr
 
 El frontend de la demo está alojado en Firebase Hosting y se conecta a la API en Render.
 
+## Captura de pantalla
+
+![Listado de Canciones en MusiXtore: Hound Express](docs/page.png)
+
 | Carpeta | Qué contiene |
 | --- | --- |
 | [front-end/](front-end/) | React, Vite, Redux Toolkit y Axios |

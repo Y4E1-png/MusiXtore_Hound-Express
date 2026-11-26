@@ -10,6 +10,10 @@ The store includes a searchable song catalog, a shopping cart, test user registr
 
 The demo frontend is hosted on Firebase Hosting and connects to the API on Render.
 
+## Screenshot
+
+![Songs list in MusiXtore: Hound Express](docs/page.png)
+
 | Folder | What it contains |
 | --- | --- |
 | [front-end/](front-end/) | React, Vite, Redux Toolkit, and Axios |
