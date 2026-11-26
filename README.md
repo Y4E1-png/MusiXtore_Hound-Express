@@ -1,8 +1,14 @@
-# MusiXtore
+# MusiXtore: Hound Express
 
 **English** · [Español](README.es.md)
 
-MusiXtore is a project that connects a React music store to a Django REST API. Browse and search the catalog, add songs to the cart, register a test user, and place an order. Sign-in and payment are simulated. Registration and orders are stored in PostgreSQL.
+**[Live demo](https://houndexpress-project.web.app)**
+
+MusiXtore: Hound Express is a project developed through EBAC’s partner-company program with Hound Express. It extends MusiXtore music store with a shipment management module.
+
+The store includes a searchable song catalog, a shopping cart, test user registration, and a simulated checkout. In the Guides section, users can create shipment records using a tracking number, view existing guides, and update their status. The React frontend connects to a Django REST API backed by PostgreSQL.
+
+The demo frontend is hosted on Firebase Hosting and connects to the API on Render.
 
 | Folder | What it contains |
 | --- | --- |
@@ -21,7 +27,7 @@ cp -n .env.example .env
 In `back-end/.env`, set these values. The first is the port exposed on your computer, and the second is the port Django listens on inside Docker.
 
 ```dotenv
-DOCKER_WEB_PORT_FORWARD=8001
+DOCKER_WEB_PORT_FORWARD=8002
 PORT=8000
 ```
 
@@ -32,7 +38,7 @@ docker compose up --build -d web postgres redis
 docker compose exec web python manage.py migrate
 ```
 
-Open the [songs endpoint](http://localhost:8001/api/songs/) to check that Django responds. If the catalog is empty, add a sample song using the browsable API form.
+Open the [songs endpoint](http://houndexpress-api.onrender.com/api/songs/) to check that Django responds. If the catalog is empty, add a sample song using the browsable API form.
 
 ## Run the frontend
 
@@ -44,7 +50,7 @@ npm ci
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173). The frontend sends requests to `http://localhost:8001/api`. Run `npm run build` from `front-end/` to generate the production build in `dist/`.
+Open [http://localhost:5173](http://localhost:5173). The frontend sends requests to `http://localhost:8002/api`. Run `npm run build` from `front-end/` to generate the production build in `dist/`.
 
 ## Try the checkout
 
