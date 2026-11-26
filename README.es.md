@@ -28,7 +28,7 @@ En `back-end/.env`, configura estos valores. El primero es el puerto expuesto en
 
 ```dotenv
 DOCKER_WEB_PORT_FORWARD=8002
-PORT=8002
+PORT=8000
 ```
 
 Después, desde `back-end/`, ejecuta:
@@ -38,7 +38,7 @@ docker compose up --build -d web postgres redis
 docker compose exec web python manage.py migrate
 ```
 
-Abre la [API de canciones](http://localhost:8001/api/songs/](http://houndexpress-api.onrender.com/api/songs/)) para comprobar que Django responde. Si el catálogo está vacío, agrega una canción de ejemplo desde el formulario de la API navegable.
+Abre la [API de canciones local](http://localhost:8002/api/songs/)[API de canciones publicado](http://houndexpress-api.onrender.com/api/songs/) para comprobar que Django responde. Si el catálogo está vacío, agrega una canción de ejemplo desde el formulario de la API navegable.
 
 ## Levantar el frontend
 
@@ -50,7 +50,7 @@ npm ci
 npm run dev
 ```
 
-Abre [http://localhost:5173](http://localhost:5173). El frontend envía las peticiones a `http://localhost:8002/api`. Ejecuta `npm run build` desde `front-end/` para generar la compilación de producción en `dist/`.
+Abre [http://localhost:5173](http://localhost:5173). El frontend envía las peticiones a `http://localhost:8002/api`y http://localhost:8002/guides/monitoring/. Ejecuta `npm run build` desde `front-end/` para generar la compilación de producción en `dist/`.
 
 ## Probar la gestión de guías
 
